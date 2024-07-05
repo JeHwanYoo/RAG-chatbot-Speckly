@@ -2,11 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rag-chatbot-speckly-deployment
-  namespace: rag-chatbot-speckly
-  labels:
-    app: rag-chatbot-speckly
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: rag-chatbot-speckly
@@ -15,27 +12,13 @@ spec:
       labels:
         app: rag-chatbot-speckly
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: kubernetes.io/arch
-                    operator: In
-                    values:
-                      - amd64
-                      - arm64
       containers:
         - name: rag-chatbot-speckly
           image: 339712698483.dkr.ecr.ap-northeast-2.amazonaws.com/rag-chatbot-speckly:latest
           ports:
-            - name: http
-              containerPort: 8080
-          imagePullPolicy: IfNotPresent
+            - containerPort: 8080
           env:
             - name: OPENAI_API_KEY
               value: "replace_here" # Todo Secret Manager
             - name: LANGCHAIN_API_KEY
               value: "replace_here" # Todo Secret Manager
-      nodeSelector:
-        kubernetes.io/os: linux

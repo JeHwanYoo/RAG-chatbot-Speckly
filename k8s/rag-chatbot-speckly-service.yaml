@@ -6,7 +6,6 @@ metadata:
   labels:
     app: rag-chatbot-speckly
 spec:
-  type: LoadBalancer
   selector:
     app: rag-chatbot-speckly
   ports:
