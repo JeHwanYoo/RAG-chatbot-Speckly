@@ -32,5 +32,10 @@ spec:
             - name: http
               containerPort: 8080
           imagePullPolicy: IfNotPresent
+          env:
+            - name: OPENAI_API_KEY
+              value: "replace_here" # Todo Secret Manager
+            - name: LANGCHAIN_API_KEY
+              value: "replace_here" # Todo Secret Manager
       nodeSelector:
         kubernetes.io/os: linux
