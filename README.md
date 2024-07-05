@@ -6,15 +6,21 @@
   <em>Image obtained from <a href="https://ideogram.ai">ideogram.ai</a></em>
 </p>
 
-This repository contains a Retrieval-Augmented Generation (RAG) chatbot designed to assist developers in understanding Speckle's developer documentation. The chatbot leverages natural language processing techniques to retrieve relevant information from Speckle's documentation and generate informative responses to user queries.
+This repository contains a Retrieval-Augmented Generation (RAG) chatbot designed to assist developers in understanding
+Speckle's developer documentation. The chatbot leverages natural language processing techniques to retrieve relevant
+information from Speckle's documentation and generate informative responses to user queries.
 
 ### Overview
 
-As developers, we often find ourselves navigating through extensive documentation to find the information we need. This RAG chatbot aims to streamline the process by providing a conversational interface where you can ask questions related to Speckle's developer documentation, and the chatbot will retrieve and present the relevant information in a concise and understandable manner.
+As developers, we often find ourselves navigating through extensive documentation to find the information we need. This
+RAG chatbot aims to streamline the process by providing a conversational interface where you can ask questions related
+to Speckle's developer documentation, and the chatbot will retrieve and present the relevant information in a concise
+and understandable manner.
 
 ### Directory Structure
 
-- `app/`: This directory contains the server code `server.py` and the client code `client.py` for running the chatbot application.
+- `app/`: This directory contains the server code `server.py` and the client code `client.py` for running the chatbot
+  application.
   To start the server, run
 
 ```
@@ -27,7 +33,8 @@ Then, to start the streamlit app, open another terminal and run
 streamlit run app/client.py
 ```
 
-- `utils/`: This directory contains the building blocks and utility functions used by the chatbot, such as document retrieval, answer generation, and grading mechanisms.
+- `utils/`: This directory contains the building blocks and utility functions used by the chatbot, such as document
+  retrieval, answer generation, and grading mechanisms.
 
 ### Getting Started
 
@@ -49,9 +56,24 @@ This is how the app looks like!
   <br>
 </p>
 
+### Docker Compose
+
+1. Create `.env` file in the root directory
+2. Set OPENAI_API_KEY environment
+3. Set LANGCHAIN_API_KEY environment
+4. Run `docker compose up --build -d`
+5. Visit `http://localhost:8080`
+
+.env
+
+```
+OPENAI_API_KEY=
+```
+
 ### Contributing
 
-Contributions to this project are welcome! If you're interested in collaborating or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+Contributions to this project are welcome! If you're interested in collaborating or have suggestions for improvements,
+please feel free to open an issue or submit a pull request.
 
 ### License
 

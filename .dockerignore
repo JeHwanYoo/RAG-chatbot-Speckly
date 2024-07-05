@@ -1,0 +1,9 @@
+.env
+.github
+.vscode
+*.jpeg
+*.png
+.gitignore
+LICENSE
+Dockerfile
+docker-compose.yml
