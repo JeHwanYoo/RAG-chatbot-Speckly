@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rag-chatbot-speckly-service
+  namespace: rag-chatbot-speckly
+  labels:
+    app: rag-chatbot-speckly
+spec:
+  selector:
+    app: rag-chatbot-speckly
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
