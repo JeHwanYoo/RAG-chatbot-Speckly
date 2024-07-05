@@ -68,6 +68,7 @@ This is how the app looks like!
 
 ```
 OPENAI_API_KEY=
+LANGCHAIN_API_KEY=
 ```
 
 ### Contributing
