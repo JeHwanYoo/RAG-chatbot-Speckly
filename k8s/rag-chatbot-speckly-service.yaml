@@ -5,7 +5,10 @@ metadata:
   namespace: rag-chatbot-speckly
   labels:
     app: rag-chatbot-speckly
+  annotations:
+    kubernetes.io/ingress.class: alb
 spec:
+  type: LoadBalancer
   selector:
     app: rag-chatbot-speckly
   ports:
